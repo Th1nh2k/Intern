@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1>User List</h1>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>CanBold</th>
+            <th>GiangVien ID</th>
+            <th>HocVien ID</th>
+            <th>Department</th>
+            <th>NhomQuyen</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.id}">1</td>
+            <td th:text="${user.username}">username</td>
+            <td th:text="${user.password}">password</td>
+            <td th:text="${user.CanBold}">CanBold</td>
+            <td th:text="${user.giangVienId}">123</td>
+            <td th:text="${user.hocVienId}">456</td>
+            <td th:text="${user.department}">IT</td>
+            <td th:text="${user.nhomQuyen.id}">Admin</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
